@@ -114,6 +114,24 @@ typedef struct {
     .single_status_byte = false, \
 }
 
+// Settings for the Adesto Tech AT25SF321B-SSHD-T 4MiB SPI flash
+// Datasheet: https://www.adestotech.com/wp-content/uploads/AT25SF321B.pdf
+#define AT25SF321B {\
+    .total_size = (1 << 22), /* 4 MiB */ \
+    .start_up_time_us = 10000, \
+    .manufacturer_id = 0x1f, \
+    .memory_type = 0x87, \
+    .capacity = 0x01, \
+    .max_clock_speed_mhz = 85, \
+    .quad_enable_bit_mask = 0x00, \
+    .has_sector_protection = true, \
+    .supports_fast_read = true, \
+    .supports_qspi = true, \
+    .supports_qspi_writes = true, \
+    .write_status_register_split = false, \
+    .single_status_byte = false, \
+}
+
 // Settings for the Adesto Tech AT25SF041 1MiB SPI flash. It's on the SparkFun
 // SAMD51 Thing Plus board
 // Datasheet: https://www.adestotech.com/wp-content/uploads/DS-AT25SF041_044.pdf
